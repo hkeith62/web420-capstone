@@ -53,9 +53,9 @@ const openapiSpecification = swaggerJsdoc(options); // Options definitions are c
 
 app.get("/", function (request, response) {
 
-    response.render("api-docs", {
+    response.render("/api-docs", {
         title: "Swagger Docs"
-    });
+    })
 });
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification, {explorer: true})); // Serve Swagger specification at api- docs, Explorer api search.
