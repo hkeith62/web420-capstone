@@ -1,0 +1,28 @@
+{
+    "name": "web-420",
+    "author": "Keith Hall",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+        "start": "nodemon-app.js"
+    },
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "bcryptjs": "^2.4.3",
+        "bluebird": "^3.7.2",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.12.3",
+        "morgan": "^1.10.0",
+        "swagger-jsdoc": "^6.1.0",
+        "swagger-ui-express": "^4.1.6",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    },
+    "engines": {
+        "node": "14.17.5",
+        "npm": "6.14.14"
+    }
+}

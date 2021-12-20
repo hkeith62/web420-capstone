@@ -2,4 +2,4 @@
 ## Contributors
 * Richard Krasso
 * Keith Hall
-#### This repository contains the capstone project for web-420.
+#### This repository contains weekly assignments for web-420.
