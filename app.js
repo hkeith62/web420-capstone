@@ -51,13 +51,6 @@ var options = {
 
 const openapiSpecification = swaggerJsdoc(options); // Options definitions are converted into swagger docs and held in variable.
 
-app.get("/", function (request, response) {
-
-    response.render("/api-docs", {
-        title: "Swagger Docs"
-    })
-});
-
 app.use('/', swaggerUi.serve, swaggerUi.setup(openapiSpecification, {explorer: true})); // Serve Swagger specification at api- docs, Explorer api search.
 app.use('/api', teamAPI);
 
