@@ -49,6 +49,13 @@ var options = {
     apis: ['./routes/*.js'], // file containing annotations for the OpenAPI Specification
 };
 
+app.get("/", function (request, response) {
+    response.render("index", {
+        title: "API Docs"
+    });
+});
+
+
 const openapiSpecification = swaggerJsdoc(options); // Options definitions are converted into swagger docs and held in variable.
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification, {explorer: true})); // Serve Swagger specification at api- docs, Explorer api search.
