@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
     res
       .status(200)
       .send('Hello server is running')
-      .end();
+      next();
   });
 
 var options = {
