@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date: 11/12/2021
 ; Modified By: Keith Hall
-; Description: Main server file for web-420 Composer API.
+; Description: Main server file for web-420 APIs.
 ;===========================================
 */
 /*jslint node: true */
@@ -41,6 +41,13 @@ mongoose.connect(mongoDB, {
     console.log(`MongoDB Error: ${err.message}`);
 })
 
+app.get('/', (req, res) => {
+    res
+      .status(200)
+      .send('Hello server is running')
+      .end();
+  });
+
 var options = {
     definition: {
         openapi: '3.0.0',
@@ -61,5 +68,3 @@ http.createServer(app).listen(app.get('port'), function() {
     console.log(`Application started and listening on port ${app.get('port')}`); // Starts the server listening on port 3000 using ('port') variable.
 })
 
-// Export the router
-module.exports = router;
