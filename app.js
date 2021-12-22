@@ -61,7 +61,5 @@ http.createServer(app).listen(app.get('port'), function() {
     console.log(`Application started and listening on port ${app.get('port')}`); // Starts the server listening on port 3000 using ('port') variable.
 })
 
-app.use('/', router);
-
 // Export the router
 module.exports = router;
