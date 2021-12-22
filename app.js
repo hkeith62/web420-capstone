@@ -41,13 +41,6 @@ mongoose.connect(mongoDB, {
     console.log(`MongoDB Error: ${err.message}`);
 })
 
-app.get('/', (req, res) => {
-    res
-      .status(200)
-      .send('Hello server is running')
-      next();
-  });
-
 var options = {
     definition: {
         openapi: '3.0.0',
