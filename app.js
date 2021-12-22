@@ -17,6 +17,9 @@ var swaggerJsdoc = require('swagger-jsdoc');  // Generate Swagger specification
 var mongoose = require('mongoose');
 var teamAPI = require('./routes/hall-team-routes');
 
+var router = express.Router();
+
+
 var app = express();   // Creates an express application and puts it inside the app variable.
 
 app.set('port', process.env.PORT || 3000);
@@ -51,9 +54,14 @@ var options = {
 
 const openapiSpecification = swaggerJsdoc(options); // Options definitions are converted into swagger docs and held in variable.
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(openapiSpecification, {explorer: true})); // Serve Swagger specification at api- docs, Explorer api search.
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification, {explorer: true})); // Serve Swagger specification at api- docs, Explorer api search.
 app.use('/api', teamAPI);
 
 http.createServer(app).listen(app.get('port'), function() {
     console.log(`Application started and listening on port ${app.get('port')}`); // Starts the server listening on port 3000 using ('port') variable.
 })
+
+app.use('/', router);
+
+// Export the router
+module.exports = router;
