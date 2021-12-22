@@ -49,7 +49,7 @@ var options = {
             version: '1.0.0',
         },
     },
-    apis: ['./routes/*.js'], // file containing annotations for the OpenAPI Specification
+    apis: ['./routes/*.js'], // path to the API docs file containing annotations for the OpenAPI Specification
 };
 
 const openapiSpecification = swaggerJsdoc(options); // Options definitions are converted into swagger docs and held in variable.
@@ -60,4 +60,5 @@ app.use('/api', teamAPI);
 http.createServer(app).listen(app.get('port'), function() {
     console.log(`Application started and listening on port ${app.get('port')}`); // Starts the server listening on port 3000 using ('port') variable.
 })
-
+// initialize swagger-jsdoc
+module.exports = openapiSpecification;
